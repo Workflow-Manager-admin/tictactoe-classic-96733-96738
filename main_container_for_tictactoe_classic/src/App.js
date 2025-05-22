@@ -1,6 +1,12 @@
 import React from 'react';
 import './App.css';
+import TicTacToe from './components/TicTacToe';
 
+// PUBLIC_INTERFACE
+/**
+ * Main App component that renders the TicTacToe game
+ * @returns {JSX.Element} The App UI
+ */
 function App() {
   return (
     <div className="app">
@@ -10,24 +16,14 @@ function App() {
             <div className="logo">
               <span className="logo-symbol">*</span> KAVIA AI
             </div>
-            <button className="btn">Template Button</button>
+            <div className="game-name">TicTacToe Classic</div>
           </div>
         </div>
       </nav>
 
-      <main>
+      <main className="game-container">
         <div className="container">
-          <div className="hero">
-            <div className="subtitle">AI Workflow Manager Template</div>
-            
-            <h1 className="title">main_container_for_tictactoe_classic</h1>
-            
-            <div className="description">
-              Start building your application.
-            </div>
-            
-            <button className="btn btn-large">Button</button>
-          </div>
+          <TicTacToe />
         </div>
       </main>
     </div>
