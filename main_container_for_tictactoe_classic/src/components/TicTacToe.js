@@ -147,32 +147,16 @@ function TicTacToe() {
       
       <div className="game-status">{gameStatus || 'Next player: X'}</div>
       
-      <div className="board">
-        <div className="board-row">
-          {renderSquare(0)}
-          {renderSquare(1)}
-          {renderSquare(2)}
-        </div>
-        <div className="board-row">
-          {renderSquare(3)}
-          {renderSquare(4)}
-          {renderSquare(5)}
-        </div>
-        <div className="board-row">
-          {renderSquare(6)}
-          {renderSquare(7)}
-          {renderSquare(8)}
-        </div>
-      </div>
+      <GameBoard 
+        board={board} 
+        onSquareClick={handleClick}
+        calculateWinner={calculateWinner}
+      />
       
-      <div className="controls">
-        <button className="btn reset-button" onClick={resetGame}>
-          New Game
-        </button>
-        <button className="btn reset-all-button" onClick={resetAll}>
-          Reset Scores
-        </button>
-      </div>
+      <GameControls 
+        onResetGame={resetGame}
+        onResetAll={resetAll}
+      />
     </div>
   );
 }
