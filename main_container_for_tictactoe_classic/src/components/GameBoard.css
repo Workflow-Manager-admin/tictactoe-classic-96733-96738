@@ -1,0 +1,70 @@
+.board {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.board-row {
+  display: flex;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  font-size: 3rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.square:hover:not(:disabled) {
+  background-color: rgba(232, 122, 65, 0.2);
+}
+
+.square:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
+.square:nth-child(1) {
+  border-left: none;
+}
+
+.board-row:nth-child(1) .square {
+  border-top: none;
+}
+
+.board-row:nth-child(3) .square {
+  border-bottom: none;
+}
+
+.square:nth-child(3) {
+  border-right: none;
+}
+
+/* X and O colors */
+.square:has(content: "X") {
+  color: var(--kavia-orange);
+}
+
+.square:has(content: "O") {
+  color: #4ECDC4;
+}
+
+@media (max-width: 500px) {
+  .square {
+    width: 80px;
+    height: 80px;
+    font-size: 2.5rem;
+  }
+}
