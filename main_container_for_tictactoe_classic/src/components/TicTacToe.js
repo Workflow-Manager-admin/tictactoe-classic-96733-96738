@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './TicTacToe.css';
 
 // PUBLIC_INTERFACE
 /**
  * TicTacToe component implements a classic Tic Tac Toe game
  * with a 3x3 grid where players take turns marking X or O.
+ * Features include:
+ * - 3x3 game board
+ * - Turn tracking between X and O players
+ * - Win/tie detection
+ * - Score tracking across multiple games
+ * - Game reset functionality
  * 
  * @returns {JSX.Element} The TicTacToe game UI
  */
@@ -13,6 +19,11 @@ function TicTacToe() {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
   const [gameStatus, setGameStatus] = useState('');
+  const [scores, setScores] = useState({
+    X: 0,
+    O: 0,
+    draws: 0
+  });
   
   // Calculate winner function
   const calculateWinner = (squares) => {
