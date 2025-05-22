@@ -132,7 +132,16 @@ function TicTacToe() {
         </div>
       </div>
       
-      <div className="game-status">{gameStatus || 'Next player: X'}</div>
+      <div className="game-status">
+        {gameStatus || (
+          <span>
+            Next player: {' '}
+            <span className={xIsNext ? 'player-x' : 'player-o'}>
+              {xIsNext ? 'X' : 'O'}
+            </span>
+          </span>
+        )}
+      </div>
       
       <GameBoard 
         board={board} 
