@@ -95,11 +95,23 @@ function TicTacToe() {
     }
   };
   
-  // Reset the game
+  // Reset the game while maintaining scores
   const resetGame = () => {
     setBoard(Array(9).fill(null));
     setXIsNext(true);
     setGameStatus('Next player: X');
+  };
+  
+  // Reset game and scores
+  const resetAll = () => {
+    setBoard(Array(9).fill(null));
+    setXIsNext(true);
+    setGameStatus('Next player: X');
+    setScores({
+      X: 0,
+      O: 0,
+      draws: 0
+    });
   };
   
   // Render each square
