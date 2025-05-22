@@ -14,11 +14,22 @@ import './GameBoard.css';
 function GameBoard({ board, onSquareClick, calculateWinner }) {
   // Render a square at the given index
   const renderSquare = (index) => {
+    // Set color styles for X and O
+    const getSquareStyle = () => {
+      if (board[index] === 'X') {
+        return { color: 'var(--kavia-orange)' };
+      } else if (board[index] === 'O') {
+        return { color: '#4ECDC4' };
+      }
+      return {};
+    };
+
     return (
       <button 
         className="square" 
         onClick={() => onSquareClick(index)}
         disabled={!!calculateWinner(board) || board[index]}
+        style={getSquareStyle()}
       >
         {board[index]}
       </button>
