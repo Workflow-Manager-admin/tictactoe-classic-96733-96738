@@ -115,44 +115,6 @@ function TicTacToe() {
       draws: 0
     });
   };
-  
-  // Handle click now just receives the index from the GameBoard component
-  const handleClick = (index) => {
-    // Create a copy of the board
-    const newBoard = [...board];
-    
-    // Return early if there's a winner or cell is already filled
-    if (calculateWinner(newBoard) || newBoard[index]) {
-      return;
-    }
-    
-    // Make the move
-    newBoard[index] = xIsNext ? 'X' : 'O';
-    setBoard(newBoard);
-    setXIsNext(!xIsNext);
-    
-    // Check if there's a winner after the move
-    const winner = calculateWinner(newBoard);
-    if (winner) {
-      if (winner === 'draw') {
-        setGameStatus("It's a draw!");
-        // Update draw count in scores
-        setScores(prevScores => ({
-          ...prevScores,
-          draws: prevScores.draws + 1
-        }));
-      } else {
-        setGameStatus(`Winner: ${winner}`);
-        // Update winner's score
-        setScores(prevScores => ({
-          ...prevScores,
-          [winner]: prevScores[winner] + 1
-        }));
-      }
-    } else {
-      setGameStatus(`Next player: ${!xIsNext ? 'X' : 'O'}`);
-    }
-  };
 
   return (
     <div className="tictactoe">

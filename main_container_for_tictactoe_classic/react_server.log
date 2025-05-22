@@ -351,3 +351,6 @@ src/components/TicTacToe.js
   Line 120:8:  Parsing error: Identifier 'handleClick' has already been declared. (120:8)
 
 webpack compiled with 2 errors
+Compiling...
+Compiled successfully!
+webpack compiled successfully
