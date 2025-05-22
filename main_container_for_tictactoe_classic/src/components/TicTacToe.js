@@ -77,8 +77,18 @@ function TicTacToe() {
     if (winner) {
       if (winner === 'draw') {
         setGameStatus("It's a draw!");
+        // Update draw count in scores
+        setScores(prevScores => ({
+          ...prevScores,
+          draws: prevScores.draws + 1
+        }));
       } else {
         setGameStatus(`Winner: ${winner}`);
+        // Update winner's score
+        setScores(prevScores => ({
+          ...prevScores,
+          [winner]: prevScores[winner] + 1
+        }));
       }
     } else {
       setGameStatus(`Next player: ${!xIsNext ? 'X' : 'O'}`);
