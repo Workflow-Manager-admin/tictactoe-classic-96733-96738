@@ -53,13 +53,12 @@
 }
 
 /* X and O colors */
-.square:has(content: "X") {
-  color: var(--kavia-orange);
+.square:disabled {
+  opacity: 1;
 }
 
-.square:has(content: "O") {
-  color: #4ECDC4;
-}
+/* These selectors won't work with :has content, using a more compatible approach */
+/* This is solved with inline styling in GameBoard component */
 
 @media (max-width: 500px) {
   .square {
