@@ -31,7 +31,19 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes squareClick {
+  0% { transform: scale(0.8); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.square:not(:empty) {
+  animation: squareClick 0.3s ease-out;
 }
 
 .square:hover:not(:disabled) {
