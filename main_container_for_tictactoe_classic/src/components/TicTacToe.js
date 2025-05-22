@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './TicTacToe.css';
+import GameBoard from './GameBoard';
+import GameControls from './GameControls';
 
 // PUBLIC_INTERFACE
 /**
