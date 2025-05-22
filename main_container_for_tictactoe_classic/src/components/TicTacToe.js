@@ -131,6 +131,18 @@ function TicTacToe() {
     <div className="tictactoe">
       <h1 className="game-title">Tic Tac Toe Classic</h1>
       
+      <div className="scoreboard">
+        <div className="score-item">
+          <span className="player-x">X</span>: {scores.X}
+        </div>
+        <div className="score-item">
+          <span className="player-o">O</span>: {scores.O}
+        </div>
+        <div className="score-item">
+          Draws: {scores.draws}
+        </div>
+      </div>
+      
       <div className="game-status">{gameStatus || 'Next player: X'}</div>
       
       <div className="board">
@@ -151,9 +163,14 @@ function TicTacToe() {
         </div>
       </div>
       
-      <button className="btn reset-button" onClick={resetGame}>
-        Reset Game
-      </button>
+      <div className="controls">
+        <button className="btn reset-button" onClick={resetGame}>
+          New Game
+        </button>
+        <button className="btn reset-all-button" onClick={resetAll}>
+          Reset Scores
+        </button>
+      </div>
     </div>
   );
 }
