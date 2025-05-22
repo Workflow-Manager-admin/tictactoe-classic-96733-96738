@@ -41,17 +41,25 @@ function GameBoard({ board, onSquareClick, calculateWinner }) {
   const renderSquare = (index) => {
     // Set color styles for X and O
     const getSquareStyle = () => {
+      const baseStyle = {
+        backgroundColor: winningLine?.includes(index) ? 'rgba(232, 122, 65, 0.3)' : 'transparent'
+      };
+      
       if (board[index] === 'X') {
-        return { color: 'var(--kavia-orange)' };
+        return { ...baseStyle, color: 'var(--kavia-orange)' };
       } else if (board[index] === 'O') {
-        return { color: '#4ECDC4' };
+        return { ...baseStyle, color: '#4ECDC4' };
       }
-      return {};
+      
+      return baseStyle;
     };
+
+    // Additional classes for winning squares
+    const squareClasses = `square ${winningLine?.includes(index) ? 'winning-square' : ''}`;
 
     return (
       <button 
-        className="square" 
+        className={squareClasses}
         onClick={() => onSquareClick(index)}
         disabled={!!calculateWinner(board) || board[index]}
         style={getSquareStyle()}
