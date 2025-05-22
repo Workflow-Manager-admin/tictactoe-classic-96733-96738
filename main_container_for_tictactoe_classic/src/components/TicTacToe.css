@@ -145,9 +145,43 @@
 }
 
 @media (max-width: 500px) {
+  .tictactoe {
+    padding: 10px;
+  }
+
+  .game-title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .scoreboard {
+    max-width: 280px;
+    flex-wrap: wrap;
+  }
+
+  .score-item {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+
+  .game-status {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 400px) {
   .square {
-    width: 80px;
-    height: 80px;
-    font-size: 2.5rem;
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .square {
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
   }
 }
